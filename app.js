@@ -30,10 +30,11 @@ $(() => {
 
     // CLICK FUNCTION GETS IDS AND STORES THEM FOR COMPARISON
     const idsArr = [];
+    let pickedThis = '';
     const selected = () => {
         $('.square').click(function() {
-            let identified = $(this).parent().parent().attr('id') + " " + $(this).parent().attr('id') + " " + $(this).attr('id');  // "this" is the element clicked
-            idsArr.push(identified)
+            pickedThis = $(this).parent().parent().attr('id') + " " + $(this).parent().attr('id') + " " + $(this).attr('id');  // "this" is the element clicked
+            idsArr.push(pickedThis)
             console.log(idsArr)
             // return idsArr
         });
@@ -41,11 +42,6 @@ $(() => {
     selected();
 
     // WRITE FUNCTION TO CREATE SHIPS AND APPEND TO BOARD RANDOMLY FOR CPU OPPONENT AND KEEP HIDDEN
-    const battleShips = (idsArr) => {
-        let shipLocation = idsArr.length;
-        console.log(`The ship location is ${shiplocation}`)
-    }
-    battleShips()
     // MAKE IT SO USER CAN DRAG AND DROP SHIPS ON THEIR BOARD
     // WRITE FUNCTION FOR CPU TO BOMB A RANDOM SQUARE ON USER BOARD
     // MAKE IT SO USER CAN SELECT A SQUARE TO BOMB ON ENEMY BOARD
